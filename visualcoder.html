@@ -3,17 +3,39 @@
 <head>
 <title>Visual Coder</title>
 <!-- *********** my important includes ***********-->
-<script src="jquery-3.1.1.min.js"></script>
-<link rel="stylesheet" href="bootstrap.min.css">
-<script src="visualcoder.js"></script>
+<script src="assets/js/jquery-3.1.1.min.js"></script>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<script src="assets/js/bootstrap.min.js"></script>
 <!-- *********** my own scripts ***********-->
-<script src="bootstrap.min.js"></script>
+<link rel="stylesheet" href="assets/css/visualcoder.css">
+<script src="assets/js/visualcoder.js"></script>
 </head>
 <body>
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-xs-12" id="myskit">
-			
+	<div class="row start">
+		<div class="col-xs-6 col-xs-offset-3" id="start-wrapper">
+			<button id="start-button"><img src="assets/images/start.png" class="img-responsive"></button>
+		</div>
+	</div>
+	<div class="row theater" style="display:none">
+		<div class="col-xs-8 col-xs-offset-2" id="myskit">
+			<img src="assets/images/white.png" class="img-responsive">
+			<div id="overlay0" class="overlay"></div>
+			<div id="overlay1" class="overlay"></div>
+			<div id="overlay2" class="overlay"></div>
+			<div id="overlay3" class="overlay"></div>
+			<div id="overlay4" class="overlay"></div>
+			<div id="overlay5" class="overlay"></div>
+			<div id="overlay6" class="overlay"></div>
+			<div id="overlay7" class="overlay"></div>
+			<div id="overlay8" class="overlay"></div>
+			<div id="overlay9" class="overlay"></div>
+		</div>
+		<div class="col-xs-6" id="ananth-text">
+			<span class="cursor">|</span>
+		</div>
+		<div class="col-xs-6" id="julian-text">
+			<span class="cursor">|</span>
 		</div>
 	</div>
 </div>
