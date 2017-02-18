@@ -1,3 +1,11 @@
+/*
+This code is incredibly long... however, I used only what we had available at this point in the
+course to build this interactive animation. Feel free to use any part of it for experimentation.
+What I want you to do is NOT to READ every line... but to grasp only the clues. With the right
+visual idea map or interaction flow diagram, even the hardest project can be easy.
+*/
+
+
 //******* cursor vars **********
 //fun cursor interval timer!!!
 var cursorRate = 800;
@@ -70,6 +78,7 @@ function createSimpleTimer(timeInterval){
 //function to reset the scene
 function resetScene(){
 	//clue: notice here that I have a global way of seeing all dynamic timers
+	//this is an incredibly efficient way to go through questions... i mean object timers
 	for(var i = 0; i < sceneTimers.length; i++){
 		//clue: I can stop all timers in this global array
 		sceneTimers[i].stop();
@@ -156,7 +165,7 @@ function set456Timer0(){
 
 //7-8 timer switch
 function set78Timer1(){
-	sceneTimers[1] = createCircuitTimer(250);
+	sceneTimers[1] = createCircuitTimer(800);
 	sceneTimers[1].start(function(){
 		sceneTimers[1].rotation++;
 		if(sceneTimers[1].rotation > 1){
@@ -204,6 +213,8 @@ function setTAscene(){
 
 function scene1(){
 	resetScene();
+	ananthText = "I am a visual coder... I like to use objects all the time to help conceptualize my code";
+	
 	//title screen
 	$('#overlay4').html("<img src='assets/images/visual1.png' class='img-responsive'>");
 	$('#overlay5').html("<img src='assets/images/visual2.png' class='img-responsive'>");
@@ -225,6 +236,7 @@ function scene1(){
 	//see objects underlined
 	setTimeout(function(){
 		resetScene();
+		ananthText = "At times, the objects will be the only thing I am manipulating.  Drawing the objects on a small piece of paper is necessary to keep ideas simple and efficient.";
 		$('#overlay4').html("<img src='assets/images/visual6.png' class='img-responsive'>");
 		$('#overlay5').html("<img src='assets/images/visual7.png' class='img-responsive'>");
 		$('#overlay5').css("opacity", "0");
@@ -233,6 +245,10 @@ function scene1(){
 		set456Timer0();
 		//clue: notice how i force the scene to finish before I allow the scene to complete
 		//this allows me to enable the user to go to the next scene
+		setTimeout(function(){
+			julianText = "I also love to visualize at the same time. This helps keeps my thoughts focused and my code clean. I like drawing my ideas in Google Slides/Presentation or directly on paper.";
+		}, 1000);
+
 		sceneComplete = true;
 	}, 8000);
 }
@@ -374,6 +390,8 @@ function scene11(){
 }
 
 //clue: make sure HTML DOM is fully loaded so we can place script in the head
+//we want all globals outside of this script.
+//only our code that starts to change things on the page goes here.
 $(document).ready(function(){
 	//begin cursor timer
 	cursorTimer = createCircuitTimer(cursorRate);
@@ -431,6 +449,8 @@ $(document).ready(function(){
 	$('#overlay9').on('click', function(){
 		if(sceneComplete){
 			scene++;
+			//clue: this is what happens when your code is too linear and does not use objects
+			//an object for-loop may be one way of optimizing this section...
 			if(scene === 2){
 				//resetScene();
 				scene2();
